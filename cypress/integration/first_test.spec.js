@@ -32,19 +32,16 @@ describe('automationPractice suite', () => {
 
             cy.visit('http://automationpractice.com/index.php')
 
-            cy.get('#block_top_menu').then((menu) => {
-                cy.wrap(menu).find('.sf-menu')
-                    .find('[title="Women"]')
+            cy.get('#block_top_menu').find('.sf-menu').then((menu) => {
+                cy.wrap(menu).find('[title="Women"]')
                     .should('contain', 'Women')
 
 
-                cy.wrap(menu).find('.sf-menu')
-                    .find('[title="Dresses"]')
+                cy.wrap(menu).find('[title="Dresses"]')
                     .should('contain', 'Dresses')
 
 
-                cy.wrap(menu).find('.sf-menu')
-                    .find('[title="T-shirts"]')
+                cy.wrap(menu).find('[title="T-shirts"]')
                     .should('contain', 'T-shirts')
 
             })
